@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari d'inscripció</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #222222;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        form {
+            width: 550px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+        }
+
+        .capcalera {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .capcalera h2 {
+            font-size: 20px;
+            margin: 0 0 5px 0;
+        }
+
+        .capcalera p {
+            font-size: 13px;
+            color: #666666;
+            margin: 0;
+        }
+
+        fieldset {
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-size: 15px;
+            padding: 0 5px;
+        }
+
+        .camp {
+            margin-bottom: 12px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="range"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 6px;
+            margin-top: 4px;
+            border: 1px solid #aaaaaa;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .botons {
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 1px solid #999999;
+            border-radius: 4px;
+            background-color: #eeeeee;
+            color: #222222;
+            margin-right: 8px;
+        }
+
+        .obligatori {
+            font-size: 12px;
+            color: #666666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="#" method="post">
+
+    <div class="capcalera">
+        <h2>Formulari d'inscripció</h2>
+        <p>Activitats extraescolars · Curs 2026–2027</p>
+    </div>
+
+    <fieldset>
+        <legend>1. Dades personals</legend>
+
+        <div class="camp">
+            <label for="nom">Nom *</label><br>
+            <input type="text" id="nom" name="nom" placeholder="Escriu el teu nom" required>
+        </div>
+
+        <div class="camp">
+            <label for="cognoms">Cognoms *</label><br>
+            <input type="text" id="cognoms" name="cognoms" placeholder="Escriu els cognoms" required>
+        </div>
+
+        <div class="camp">
+            <label for="correu">Correu electrònic *</label><br>
+            <input type="email" id="correu" name="correu" placeholder="exemple@correu.com" required>
+        </div>
+
+        <div class="camp">
+            <label for="telefon">Telèfon</label><br>
+            <input type="tel" id="telefon" name="telefon" placeholder="600 000 000">
+        </div>
+
+        <div class="camp">
+            <label for="data">Data de naixement *</label><br>
+            <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" required>
+        </div>
+
+        <div class="camp">
+            <label for="contrasenya">Contrasenya *</label><br>
+            <input type="password" id="contrasenya" name="contrasenya" placeholder="Introdueix una contrasenya" required>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Informació acadèmica</legend>
+
+        <div class="camp">
+            <label for="curs">Curs actual *</label><br>
+            <select id="curs" name="curs" required>
+                <option value="">Selecciona un curs</option>
+                <option value="smx1">SMX1</option>
+                <option value="smx2">SMX2</option>
+            </select>
+        </div>
+
+        <div class="camp">
+            <p>Activitat que vols realitzar *</p>
+
+            <input type="radio" id="programacio" name="activitat" value="programacio" required>
+            <label for="programacio">Programació</label><br>
+
+            <input type="radio" id="robotica" name="activitat" value="robotica">
+            <label for="robotica">Robòtica</label><br>
+
+            <input type="radio" id="disseny" name="activitat" value="disseny-web">
+            <label for="disseny">Disseny web</label><br>
+
+            <input type="radio" id="esports" name="activitat" value="esports">
+            <label for="esports">Esports</label>
+        </div>
+
+        <div class="camp">
+            <p>Dies disponibles</p>
+
+            <input type="checkbox" id="dilluns" name="dies[]" value="dilluns">
+            <label for="dilluns">Dilluns</label><br>
+
+            <input type="checkbox" id="dimarts" name="dies[]" value="dimarts">
+            <label for="dimarts">Dimarts</label><br>
+
+            <input type="checkbox" id="dimecres" name="dies[]" value="dimecres">
+            <label for="dimecres">Dimecres</label><br>
+
+            <input type="checkbox" id="dijous" name="dies[]" value="dijous">
+            <label for="dijous">Dijous</label><br>
+
+            <input type="checkbox" id="divendres" name="dies[]" value="divendres">
+            <label for="divendres">Divendres</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Informació addicional</legend>
+
+        <div class="camp">
+            <label for="nivell">Nivell d'experiència (de 0 a 10)</label><br>
+            <input type="range" id="nivell" name="nivell" min="0" max="10" value="5">
+        </div>
+
+        <div class="camp">
+            <label for="observacions">Comentaris o observacions</label><br>
+            <textarea id="observacions" name="observacions" rows="4" placeholder="Escriu aquí els teus comentaris..."></textarea>
+        </div>
+
+        <div class="camp">
+            <label for="document">Adjunta un document (opcional)</label><br>
+            <input type="file" id="document" name="document">
+        </div>
+    </fieldset>
+
+    <div class="camp">
+        <input type="checkbox" id="condicions" name="condicions" value="acceptades" required>
+        <label for="condicions">Accepto la política de privacitat i les condicions d'inscripció. *</label>
+    </div>
+
+    <div class="botons">
+        <button type="submit">Enviar inscripció</button>
+        <button type="reset">Netejar</button>
+    </div>
+
+    <p class="obligatori">* Camps obligatoris</p>
+
+</form>
+
+</body>
+</html>
